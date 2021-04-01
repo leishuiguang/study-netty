@@ -23,7 +23,7 @@ public class NIOFileChannelRead {
         // 创建一个缓冲区，存放字符串
         ByteBuffer byteBuffer = ByteBuffer.allocate((int) file.length());
 
-        // fileChannel 写入数据到byteBuffer
+        // 读取 fileChannel内容 到 byteBuffer
         fileChannel.read(byteBuffer);
 
         // 对byteBuffer 进行flip

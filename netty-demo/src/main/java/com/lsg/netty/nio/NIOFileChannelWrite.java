@@ -28,7 +28,7 @@ public class NIOFileChannelWrite {
         // 对byteBuffer 进行flip
         byteBuffer.flip();// 切换状态、读取byteBuffer
 
-        // fileChannel 从byteBuffer中读取数据
+        // 将byteBuffer 写入到fileChannel
         fileChannel.write(byteBuffer);
 
         // 关闭文件输出流
