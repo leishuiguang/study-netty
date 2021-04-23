@@ -1,0 +1,13 @@
+server:
+  port: 8761
+
+eureka:
+  instance:
+    hostname: scs-eureka
+  client:
+    fetch-registry: false #表示自己就是注册中心，不需要检索服务，只需要维护服务实例
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+spring:
+  application:
+    name: scs-eureka

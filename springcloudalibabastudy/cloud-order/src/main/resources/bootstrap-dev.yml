@@ -1,0 +1,24 @@
+server:
+  port: 9202
+spring:
+  application:
+    name: cloud-order
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+      config:
+
+        server-addr: 127.0.0.1:8848
+        file-extension: yaml # 指定配置文件为yaml格式
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+# 开启feign-hystrix 服务降级
+feign:
+  hystrix:
+    enabled: true

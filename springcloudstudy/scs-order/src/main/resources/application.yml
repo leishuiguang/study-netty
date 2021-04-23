@@ -1,0 +1,36 @@
+server:
+  port: 8001
+
+spring:
+  application:
+    name: scs-order
+
+#  cloud:
+#    loadbalancer:
+#      ribbon:
+#        enabled: false
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+
+#SCS-PAYMENT:
+#  ribbon:
+#    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+
+feign:
+  client:
+    config:
+      default:
+#        connectTimeout: 5000
+#        readTimeout: 5000
+        loggerLevel: full
+
+  hystrix:
+    enabled: true
+
+logging:
+  level:
+    com.lsg.scsapi.payment: debug

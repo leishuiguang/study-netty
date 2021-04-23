@@ -1,0 +1,30 @@
+server:
+  port: 9000
+
+spring:
+  application:
+    name: scs-gateway
+  # 网关配置
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          # 表明Gateway开启服务注册和发现的功能
+          enabled: true
+      routes:
+        - id: app_route
+          uri: lb://scs-order
+          predicates:
+            - Path=/**
+
+
+    loadbalancer:
+      ribbon:
+        enabled: false
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
