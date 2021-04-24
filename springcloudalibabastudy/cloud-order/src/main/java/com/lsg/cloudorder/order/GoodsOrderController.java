@@ -7,6 +7,7 @@ import com.lsg.cloudcommon.result.Result;
 import com.lsg.cloudcommon.result.ResultCode;
 import com.lsg.cloudorder.config.WeChatConfig;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,6 +24,9 @@ public class GoodsOrderController {
     @Autowired
     private WeChatConfig weChatConfig;
 
+    @Autowired
+    private RabbitTemplate rabbitTemplate;
+
     @GetMapping("/createOrder")
     public Result createOrder(String uid, String goodsId) {
         // 验证用户UID
@@ -32,11 +36,18 @@ public class GoodsOrderController {
         }
         // 验证商品goodsID
 
+
+        rabbitTemplate.convertAndSend("exchange.direct",
+                "test.news",
+                IdUtil.fastUUID());
         return new Result(IdUtil.simpleUUID());
     }
 
     @GetMapping("/hello")
     public String hello() {
+//        rabbitTemplate.convertAndSend("exchange.direct",
+//                "test.news",
+//                IdUtil.fastUUID());
         return weChatConfig.toString();
     }
 

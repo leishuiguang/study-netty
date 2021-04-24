@@ -12,6 +12,12 @@ spring:
         server-addr: 127.0.0.1:8848
         file-extension: yaml # 指定配置文件为yaml格式
 
+  rabbitmq:
+    host: 47.100.181.79
+    username: guest
+    password: guest
+    port: 5672
+
 management:
   endpoints:
     web:
