@@ -11,13 +11,13 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 @EnableRabbit
 public class CloudPaymentApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(CloudPaymentApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(CloudPaymentApplication.class, args);
+    }
 
-	@RabbitListener(queues = "test.news")
-	public void listen(Object o) {
-		System.out.println(o);
-	}
+    @RabbitListener(queues = "test.news")
+    public void listen(Object o) {
+        System.out.println(o);
+    }
 
 }

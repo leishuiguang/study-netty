@@ -30,6 +30,7 @@
         <module>cloud-payment</module>
         <module>cloud-api</module>
         <module>cloud-common</module>
+        <module>cloud-gateway</module>
     </modules>
 
     <!--spring cloud 依赖管理-->

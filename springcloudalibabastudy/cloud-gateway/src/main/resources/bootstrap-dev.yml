@@ -1,0 +1,28 @@
+server:
+  port: 9000
+spring:
+  application:
+    name: cloud-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+    gateway:
+      routes:
+        - id: route-order
+          uri: lb://cloud-order
+          predicates:
+            - Path=/**
+          filters:
+            - Cust
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+# 开启feign-hystrix 服务降级
+feign:
+  hystrix:
+    enabled: true

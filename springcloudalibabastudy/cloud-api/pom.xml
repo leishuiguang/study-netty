@@ -19,7 +19,6 @@
         </dependency>
 
 
-
         <dependency>
             <groupId>com.lsg</groupId>
             <artifactId>cloud-common</artifactId>

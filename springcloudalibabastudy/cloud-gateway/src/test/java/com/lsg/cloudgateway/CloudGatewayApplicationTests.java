@@ -1,10 +1,10 @@
-package com.lsg.cloudorder;
+package com.lsg.cloudgateway;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class CloudOrderApplicationTests {
+class CloudGatewayApplicationTests {
 
     @Test
     void contextLoads() {

@@ -10,8 +10,8 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @EnableFeignClients(basePackages = {"com.lsg.cloudapi.user"})
 public class CloudOrderApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(CloudOrderApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(CloudOrderApplication.class, args);
+    }
 
 }
